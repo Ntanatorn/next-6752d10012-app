@@ -108,53 +108,53 @@ export default function CreateMyRun() {
 
   return (
     <>
-      <div className="flex flex-col items-center px-4 sm:px-6 lg:px-8 min-h-screen bg-gray-50 py-10">
-        <div className="bg-white border border-gray-300 shadow-lg rounded-xl p-8 max-w-md w-full flex flex-col items-center">
-          <Image src={runIcon} alt="Run" width={150} className="mb-5" />
-          <h1 className="text-2xl font-bold text-red-700 mb-1">
+      <div className="flex flex-col items-center px-4 sm:px-6 lg:px-8 min-h-screen bg-gradient-to-b from-green-100 to-blue-100 py-10">
+        <div className="bg-white border border-gray-200 shadow-lg rounded-2xl p-8 max-w-md w-full flex flex-col items-center">
+          <Image src={runIcon} alt="วิ่ง" width={150} className="mb-5 rounded-full shadow-md" />
+          <h1 className="text-2xl font-bold text-orange-600 mb-1">
             {editId ? "แก้ไขการวิ่ง" : "บันทึกการวิ่งใหม่"}
           </h1>
-          <h2 className="text-lg text-red-700 mb-5">
+          <h2 className="text-lg text-orange-500 mb-5">
             {editId ? "แก้ไขข้อมูลการวิ่งของคุณ" : "กรอกข้อมูลการวิ่งของคุณ"}
           </h2>
 
           <form onSubmit={handleUploadAndSave} className="w-full space-y-4">
             <div>
-              <label className="block mb-1">วันที่วิ่ง</label>
+              <label className="block mb-1 font-semibold">วันที่วิ่ง</label>
               <input
                 type="text"
                 value={runDate}
                 onChange={(e) => setRunDate(e.target.value)}
                 placeholder="เช่น 19/10/2025"
-                className="w-full border rounded-lg p-2"
+                className="w-full border rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
                 required
               />
             </div>
 
             <div>
-              <label className="block mb-1">ระยะทาง (เมตร)</label>
+              <label className="block mb-1 font-semibold">ระยะทาง (เมตร)</label>
               <input
                 type="number"
                 value={runDistance}
                 onChange={(e) => setRunDistance(Number(e.target.value))}
-                className="w-full border rounded-lg p-2"
+                className="w-full border rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
                 required
               />
             </div>
 
             <div>
-              <label className="block mb-1">สถานที่วิ่ง</label>
+              <label className="block mb-1 font-semibold">สถานที่วิ่ง</label>
               <input
                 type="text"
                 value={runPlace}
                 onChange={(e) => setRunPlace(e.target.value)}
-                className="w-full border rounded-lg p-2"
+                className="w-full border rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
                 required
               />
             </div>
 
             <div>
-              <label className="block mb-1 font-medium">อัปโหลดรูป</label>
+              <label className="block mb-1 font-semibold">อัปโหลดรูป</label>
               <input
                 id="fileInput"
                 type="file"
@@ -164,7 +164,7 @@ export default function CreateMyRun() {
               />
               <label
                 htmlFor="fileInput"
-                className="inline-block bg-green-500 text-white px-4 py-2 rounded cursor-pointer hover:bg-purple-500"
+                className="inline-block bg-gradient-to-r from-green-400 to-blue-500 text-white px-4 py-2 rounded-lg cursor-pointer font-semibold shadow hover:from-blue-500 hover:to-green-400 transition"
               >
                 เลือกรูป
               </label>
@@ -172,7 +172,7 @@ export default function CreateMyRun() {
                 <Image
                   src={imagePreview}
                   alt="preview"
-                  className="mt-2 max-w-[150px] w-full h-auto rounded"
+                  className="mt-3 max-w-[150px] w-full h-auto rounded-lg shadow"
                   width={150}
                   height={150}
                 />
@@ -181,7 +181,7 @@ export default function CreateMyRun() {
 
             <button
               type="submit"
-              className="w-full bg-green-500 text-white px-4 py-2 rounded hover:bg-purple-400 transition"
+              className="w-full bg-gradient-to-r from-orange-400 to-red-500 text-white px-4 py-2 rounded-xl font-semibold shadow-lg hover:from-red-500 hover:to-orange-400 transition transform hover:-translate-y-1"
             >
               {editId ? "บันทึกการแก้ไข" : "บันทึกข้อมูลการวิ่ง"}
             </button>
@@ -189,7 +189,7 @@ export default function CreateMyRun() {
 
           <Link
             href="/show-all-myrun"
-            className="text-blue-500 w-full text-center mt-5 block hover:text-blue-600"
+            className="text-blue-500 w-full text-center mt-5 block hover:text-blue-600 font-semibold"
           >
             กลับไปหน้ารายการการวิ่ง
           </Link>
